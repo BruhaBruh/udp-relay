@@ -37,8 +37,8 @@ func main() {
 
 	log.Printf("Relay is running: localhost:%s -> %s:%s", localPort, remoteHost, remotePort)
 
-	buf := make([]byte, 2048)
 	for {
+		buf := make([]byte, 1024)
 		n, _, err := conn.ReadFromUDP(buf)
 		if err != nil {
 			log.Println("Read error:", err)
